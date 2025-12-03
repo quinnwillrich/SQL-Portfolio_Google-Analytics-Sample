@@ -48,5 +48,6 @@ Desktop and Tablet users consumed more content per session, indicating that larg
 
 Desktop drives over twice the session volume of Mobile, aligning with its stronger engagement performance.
 
+Here is the data produced by the query in csv format:
 
-
+[Traffic Patterns_GA Sample Data_Query Result.csv](https://github.com/user-attachments/files/23893111/Traffic.Patterns_GA.Sample.Data_Query.Result.csv)
