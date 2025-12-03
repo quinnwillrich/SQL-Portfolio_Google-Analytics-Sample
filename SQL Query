@@ -1,0 +1,18 @@
+SELECT
+  channelGrouping,
+  device.deviceCategory AS device,
+  COUNT(DISTINCT fullVisitorId) AS users,
+  COUNT(*) AS sessions,
+  SUM(totals.pageviews) AS pageviews,
+  AVG(totals.pageviews) AS avg_pages_per_session,
+  AVG(totals.timeOnSite) AS avg_session_duration,
+  SAFE_DIVIDE(SUM(totals.bounces), COUNT(*)) AS bounce_rate,
+  SAFE_DIVIDE(SUM(totals.newVisits), COUNT(*)) AS pct_new_sessions
+FROM
+  `bigquery-public-data.google_analytics_sample.ga_sessions_*`
+WHERE
+  _TABLE_SUFFIX BETWEEN '20160801' AND '20170831'
+GROUP BY
+  channelGrouping, device
+ORDER BY
+  channelGrouping, device;
